@@ -1,0 +1,46 @@
+name: InvestmentGame
+options:
+  xcodeVersion: 12.5
+configs:
+  Production: release
+  Develop: debug
+options:
+  deploymentTarget:
+    iOS: '14.0'
+  defaultConfig: Develop
+  bundleIdPrefix: ru
+  groupSortPosition: top
+  developmentLanguage: "ru"
+  usesTabs: false
+  indentWidth: 2
+  tabWidth: 2
+  groupOrdering:
+    - order: [Sources, Supporting Files]
+    - pattern: 'InvestmentGame'
+      order: [Application, Common, Protocols, Extensions, Modules, Views, Services, Utils]
+settings:
+  base:
+    SWIFT_VERSION: 5.5
+    TARGETED_DEVICE_FAMILY: 1
+  configs:
+    Production:
+      SWIFT_COMPILATION_MODE: "wholemodule"
+    Develop:
+      SWIFT_COMPILATION_MODE: "incremental"
+targets:
+  InvestmentGame:
+    type: application
+    platform: iOS
+    deploymentTarget: 14.0
+    sources:
+      - InvestmentGame
+      - Supporting Files
+    settings:
+      base:
+        CODE_SIGN_IDENTITY: iPhone Developer
+        CODE_SIGN_STYLE: Automatic
+        INFOPLIST_FILE: Supporting Files/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: ru.investmentgame
+    scheme:
+      environmentVariables:
+        DYLD_PRINT_STATISTICS: 1
