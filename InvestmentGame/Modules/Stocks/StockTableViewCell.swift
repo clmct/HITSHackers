@@ -51,8 +51,6 @@ class StockTableViewCell: UITableViewCell {
       make.size.equalTo(60)
     }
     
-    icon.backgroundColor = .green
-    
     title.snp.makeConstraints { make in
       make.leading.equalTo(icon.snp.trailing).offset(10)
       make.trailing.equalToSuperview().inset(70)

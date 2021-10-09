@@ -12,7 +12,7 @@ class StocksViewController: UIViewController {
     tableView.dataSource = self
     tableView.register(StockTableViewCell.self, forCellReuseIdentifier: "StockTableViewCell")
     
-    NetworkService.shared.getUser(id: 2) { result in
+    NetworkService.shared.getUser(id: 4) { result in
       switch result {
       case .success(let result):
         let instruments = result.gameWeek?.instruments
