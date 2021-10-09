@@ -9,5 +9,6 @@ target 'InvestmentGame' do
   pod 'Alamofire'
   pod 'Kingfisher'
   pod 'SnapKit'
+  pod 'FittedSheets'
 
 end
