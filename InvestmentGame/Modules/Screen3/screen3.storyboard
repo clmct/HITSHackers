@@ -23,8 +23,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_2_" translatesAutoresizingMaskIntoConstraints="NO" id="PBI-83-bSK">
                                 <rect key="frame" x="0.0" y="662.33333333333337" width="414" height="73.666666666666629"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OKW-qs-Lbr">
-                                <rect key="frame" x="30" y="130.33333333333337" width="354" height="427"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OKW-qs-Lbr">
+                                <rect key="frame" x="30" y="140.33333333333337" width="354" height="407"/>
                                 <string key="text">Маша благодарна вам за помощь! Мы уверены, что она учтет ваши советы при формировании своего портфеля. А что насчет вашего? Готовы ли вы собрать собственный инвестиционный портфель? Есть способ проверить! Мы предлагаем вам специально подобранную под вас коллекцию ненастоящих ценных бумаг. Ваша цель - получить сбалансированный портфель к концу игры. Не беспокойтесь, на протяжении всего пути мы будем давать вам ценные советы и фидбэк на принятые решения. Ну что, готовы начать?</string>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <color key="textColor" name="Color"/>
@@ -50,7 +50,7 @@
                         <viewLayoutGuide key="safeArea" id="oun-5X-B0J"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="OKW-qs-Lbr" firstAttribute="bottom" secondItem="Hxo-pk-aUC" secondAttribute="top" constant="-20" id="06N-r6-HQT"/>
+                            <constraint firstItem="OKW-qs-Lbr" firstAttribute="bottom" secondItem="Hxo-pk-aUC" secondAttribute="top" constant="-30" id="06N-r6-HQT"/>
                             <constraint firstItem="KnT-wk-gxV" firstAttribute="top" secondItem="Hxo-pk-aUC" secondAttribute="top" id="0Mt-4f-xBR"/>
                             <constraint firstItem="KnT-wk-gxV" firstAttribute="bottom" secondItem="Hxo-pk-aUC" secondAttribute="bottom" id="2O6-F1-ANY"/>
                             <constraint firstItem="vXK-qk-d8Z" firstAttribute="leading" secondItem="oun-5X-B0J" secondAttribute="leading" id="3mb-Bf-xo0"/>
@@ -65,7 +65,7 @@
                             <constraint firstItem="vXK-qk-d8Z" firstAttribute="height" secondItem="oun-5X-B0J" secondAttribute="height" multiplier="0.15" id="UvS-r7-p3L"/>
                             <constraint firstItem="vXK-qk-d8Z" firstAttribute="trailing" secondItem="oun-5X-B0J" secondAttribute="trailing" id="XgO-eu-YEP"/>
                             <constraint firstItem="vXK-qk-d8Z" firstAttribute="top" secondItem="wiG-gv-PKf" secondAttribute="top" id="Zo0-3d-vZI"/>
-                            <constraint firstItem="OKW-qs-Lbr" firstAttribute="top" secondItem="vXK-qk-d8Z" secondAttribute="bottom" constant="20" id="acq-da-qTM"/>
+                            <constraint firstItem="OKW-qs-Lbr" firstAttribute="top" secondItem="vXK-qk-d8Z" secondAttribute="bottom" constant="30" id="acq-da-qTM"/>
                             <constraint firstItem="oun-5X-B0J" firstAttribute="trailing" secondItem="9sB-dQ-PdB" secondAttribute="trailing" constant="12" id="gSw-Jy-0Is"/>
                             <constraint firstAttribute="bottom" secondItem="PBI-83-bSK" secondAttribute="bottom" id="kRU-cV-3yh"/>
                             <constraint firstItem="Hxo-pk-aUC" firstAttribute="bottom" secondItem="PBI-83-bSK" secondAttribute="top" constant="-30" id="nMY-Sg-uqU"/>
