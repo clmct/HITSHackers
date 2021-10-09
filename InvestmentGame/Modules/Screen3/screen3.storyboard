@@ -42,6 +42,9 @@
                                 <state key="normal" title="Я справлюсь!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="go:" destination="iF0-qB-Vj7" eventType="touchUpInside" id="gRn-Ib-gB8"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Победа!" translatesAutoresizingMaskIntoConstraints="NO" id="9sB-dQ-PdB">
                                 <rect key="frame" x="277.66666666666669" y="8" width="124.33333333333331" height="76"/>

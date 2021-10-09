@@ -84,7 +84,7 @@ extension NetworkService {
   //
   
   
-  func createUser(name: String, completion: @escaping (Result<User, NetworkError>) -> Void) {
+  func createUser(name: String, investID: Int, completion: @escaping (Result<User, NetworkError>) -> Void) {
     guard let url = URL(string: baseApi + "user") else {
       completion(.failure(.error))
       return
@@ -93,7 +93,9 @@ extension NetworkService {
     var urlRequest = URLRequest(url: url)
     urlRequest.httpMethod = "POST"
     
-    let parameterDictionary = ["Name" : name]
+    let parameterDictionary = ["Name" : name,
+                               "InvestProfileID" : investID,
+                               "BaseBalance" : 700000] as [String : Any]
     urlRequest.setValue("Application/json", forHTTPHeaderField: "Content-Type")
     guard let httpBody = try? JSONSerialization.data(withJSONObject: parameterDictionary, options: []) else {
       return

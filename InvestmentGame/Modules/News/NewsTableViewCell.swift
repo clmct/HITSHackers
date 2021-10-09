@@ -1,7 +1,7 @@
 import UIKit
 
 class NewsTableViewCell: UITableViewCell {
-  let text = UILabel()
+  let textLabel1 = UILabel()
   
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -13,17 +13,17 @@ class NewsTableViewCell: UITableViewCell {
   }
   
   func configure(news: Advice) {
-    self.text.text = news.text
+    self.textLabel1.text = news.text
   }
   
   func setup() {
-    contentView.addSubview(text)
+    contentView.addSubview(textLabel1)
     
-    text.snp.makeConstraints { make in
+    textLabel1.snp.makeConstraints { make in
       make.edges.equalToSuperview().inset(20)
     }
     
-    text.numberOfLines = .zero
+    textLabel1.numberOfLines = .zero
   }
   
 }

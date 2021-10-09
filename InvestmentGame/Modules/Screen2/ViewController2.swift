@@ -68,6 +68,7 @@ class ViewController2: UIViewController {
             print(self.userData)
           let storyboard = UIStoryboard(name: "screen3", bundle: nil)
           let viewController = storyboard.instantiateViewController(withIdentifier: "viewController3") as? ViewController3
+          viewController?.data = self.userData
           self.navigationController?.pushViewController(viewController ?? UIViewController(), animated: true)
         }
 
@@ -86,6 +87,7 @@ class ViewController2: UIViewController {
             print(self.userData)
           let storyboard = UIStoryboard(name: "screen3", bundle: nil)
           let viewController = storyboard.instantiateViewController(withIdentifier: "viewController3") as? ViewController3
+          viewController?.data = self.userData
           self.navigationController?.pushViewController(viewController ?? UIViewController(), animated: true)
         }
     }
