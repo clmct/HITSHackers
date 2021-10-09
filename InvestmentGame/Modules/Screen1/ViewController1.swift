@@ -15,74 +15,79 @@ class ViewController1: UIViewController {
     
     @IBOutlet var welcomeLabelsOnLeft: [UILabel]!
     
+    
+    @IBOutlet var allLabels: [UILabel]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        textLabel.adjustsFontSizeToFitWidth = true
+        textLabel.minimumScaleFactor = 0.5
         navigationController?.setNavigationBarHidden(true, animated: false)
-        navigationController?.navigationBar.barStyle = .black
-      
+        
         textLabel.text = "Добро пожаловать в нашу игру! В ней Вам предстоит познакомиться с инвестициями и дорогой в светлое будущее с пассивным доходом. \n\nГотовы начать?"
         
+        self.view.layoutIfNeeded()
+        var flag = false
         var i = 0
-        var j = 0
-        for label in welcomeLabelsOnRight {
+        for label in allLabels {
+            flag = !flag
+            self.view.layoutIfNeeded()
             
-            label.snp.makeConstraints { make in
-                make.left.equalTo(view.snp.right)
-                make.top.equalToSuperview().inset(i*40 + 40)
+            if flag {
+                label.snp.makeConstraints { make in
+                    make.left.equalTo(self.view.snp.right)
+                    make.top.equalToSuperview().inset(i*40 + 40)
+                }
+            } else {
+                label.snp.makeConstraints { make in
+                    make.right.equalTo(self.view.snp.left)
+                    make.top.equalToSuperview().inset(i*40 + 40)
+                }
             }
+            
             i += 1
-            guard j < welcomeLabelsOnLeft.count else {
-                break
-            }
-            
-            let label2 = welcomeLabelsOnLeft[j]
-            
-            label2.snp.makeConstraints { make in
-                make.right.equalTo(view.snp.left)
-                make.top.equalToSuperview().inset(i*40 + 40)
-            }
-            j += 1
-            i += 1
-            
         }
-        
-        
         
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.view.layoutIfNeeded()
         
-        UIView.animate(withDuration: 5.0, delay: 2, options: [.repeat, .autoreverse], animations: {
-            
+        UIView.animate(withDuration: 5.0, delay: 1.5, options: [.repeat, .autoreverse], animations: {
+            self.view.layoutIfNeeded()
+            var flag = false
             var i = 0
-            var j = 0
-            for label in self.welcomeLabelsOnRight {
+            for label in self.allLabels {
+                flag = !flag
                 self.view.layoutIfNeeded()
-                label.snp.remakeConstraints { make in
-                    make.right.equalTo(self.view.snp.left)
-                    make.top.equalToSuperview().inset(i*40 + 40)
+                
+                if flag {
+                    label.snp.remakeConstraints { make in
+                        make.right.equalTo(self.view.snp.left)
+                        make.top.equalToSuperview().inset(i*40 + 40)
+                    }
+                } else {
+                    label.snp.remakeConstraints { make in
+                        make.left.equalTo(self.view.snp.right)
+                        make.top.equalToSuperview().inset(i*40 + 40)
+                    }
                 }
+                
                 i += 1
-                guard j < self.welcomeLabelsOnLeft.count else {
-                    break
-                }
-                
-                let label2 = self.welcomeLabelsOnLeft[j]
-                
-                label2.snp.remakeConstraints { make in
-                    make.left.equalTo(self.view.snp.right)
-                    make.top.equalToSuperview().inset(i*40 + 40)
-                }
-                j += 1
-                i += 1
-                
             }
             
         })
     }
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    @IBAction func pressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "screen2", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "viewController2") as? ViewController2
+        self.navigationController?.pushViewController(viewController ?? UIViewController(), animated: true)
+    }
     
 }
 

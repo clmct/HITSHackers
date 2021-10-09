@@ -3,6 +3,7 @@
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -82,7 +83,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="ax0-Xj-eEe">
-                                <rect key="frame" x="10" y="358" width="90" height="48"/>
+                                <rect key="frame" x="13" y="358" width="90" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ax0-Xj-eEe" secondAttribute="height" multiplier="15:8" id="WbC-1U-Sbk"/>
                                     <constraint firstAttribute="width" constant="90" id="ele-jO-D9W"/>
@@ -94,12 +95,15 @@
                                 <state key="normal" title="Поехали!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="pressed:" destination="dFW-AU-e7e" eventType="touchUpInside" id="MJt-eJ-DCq"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6H-D8-LFm">
                                 <rect key="frame" x="30" y="426" width="354" height="200"/>
                                 <string key="text">Добро пожаловать в нашу игру! В ней Вам предстоит познакомиться с инвестициями и дорогой в светлое будущее с пассивным доходом. Готовы начать?</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                <color key="textColor" name="Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -118,7 +122,7 @@
                             <constraint firstItem="MTM-7q-3wj" firstAttribute="trailing" secondItem="Km8-pc-tZz" secondAttribute="trailing" constant="35" id="ZQp-8Y-ajK"/>
                             <constraint firstItem="IxR-hp-COY" firstAttribute="bottom" secondItem="Km8-pc-tZz" secondAttribute="bottom" id="b8V-Sa-xh4"/>
                             <constraint firstItem="C6H-D8-LFm" firstAttribute="bottom" secondItem="Km8-pc-tZz" secondAttribute="top" constant="-20" id="cJf-Mt-Cvh"/>
-                            <constraint firstItem="MTM-7q-3wj" firstAttribute="leading" secondItem="ax0-Xj-eEe" secondAttribute="leading" constant="-10" id="hYI-3o-aFC"/>
+                            <constraint firstItem="MTM-7q-3wj" firstAttribute="leading" secondItem="ax0-Xj-eEe" secondAttribute="leading" constant="-13" id="hYI-3o-aFC"/>
                             <constraint firstItem="IxR-hp-COY" firstAttribute="trailing" secondItem="Km8-pc-tZz" secondAttribute="trailing" id="hgA-PK-kmI"/>
                             <constraint firstItem="MTM-7q-3wj" firstAttribute="trailing" secondItem="Uw0-6A-qTZ" secondAttribute="trailing" id="inc-ib-tyl"/>
                             <constraint firstItem="MTM-7q-3wj" firstAttribute="trailing" secondItem="C6H-D8-LFm" secondAttribute="trailing" constant="30" id="nIS-td-a6M"/>
@@ -137,6 +141,14 @@
                         <outletCollection property="welcomeLabelsOnLeft" destination="27k-It-lrl" collectionClass="NSMutableArray" id="dgX-gn-r5j"/>
                         <outletCollection property="welcomeLabelsOnRight" destination="QBZ-P8-qnW" collectionClass="NSMutableArray" id="ICb-UQ-r7b"/>
                         <outletCollection property="welcomeLabelsOnLeft" destination="nAS-nb-LU4" collectionClass="NSMutableArray" id="7g3-eb-JYS"/>
+                        <outletCollection property="allLabels" destination="mVN-pV-mJD" collectionClass="NSMutableArray" id="De1-nT-gXL"/>
+                        <outletCollection property="allLabels" destination="VNP-2j-BUJ" collectionClass="NSMutableArray" id="AMr-tH-h0l"/>
+                        <outletCollection property="allLabels" destination="5vh-iU-loA" collectionClass="NSMutableArray" id="PkA-Yg-jKH"/>
+                        <outletCollection property="allLabels" destination="Rne-bj-mPK" collectionClass="NSMutableArray" id="E9T-ts-fgf"/>
+                        <outletCollection property="allLabels" destination="nAS-nb-LU4" collectionClass="NSMutableArray" id="F09-rp-rb2"/>
+                        <outletCollection property="allLabels" destination="4vi-ad-Atf" collectionClass="NSMutableArray" id="Tuz-2L-Jcg"/>
+                        <outletCollection property="allLabels" destination="QBZ-P8-qnW" collectionClass="NSMutableArray" id="dJg-Iz-tiu"/>
+                        <outletCollection property="allLabels" destination="27k-It-lrl" collectionClass="NSMutableArray" id="OdN-ZO-0Sp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGm-TZ-McS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -148,6 +160,9 @@
         <image name="Button" width="945" height="180"/>
         <image name="Vector" width="780" height="784"/>
         <image name="logo" width="234" height="93"/>
+        <namedColor name="Color">
+            <color red="0.043137254901960784" green="0.11372549019607843" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
