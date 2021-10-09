@@ -28,58 +28,14 @@ import UIKit
 //    return button
 //  }
 //}
-//
-//extension UIButton {
-//
-//  @discardableResult
-//  func makeCornerRadius(radius: CGFloat) -> UIButton {
-//    layer.cornerRadius = radius
-//    return self
-//  }
-//
-//  @discardableResult
-//  func setTitle( title: String) -> UIButton {
-//    setTitle(title, for: .normal)
-//    return self
-//  }
-//
-//  @discardableResult
-//  func setTitleColor( color: UIColor) -> UIButton {
-//    setTitleColor(color, for: .normal)
-//    return self
-//  }
-//
-//  @discardableResult
-//  func setBackgroundColor( color: UIColor) -> UIButton {
-//    backgroundColor = color
-//    return self
-//  }
-//
-//  @discardableResult
-//  func setTitleFont( font: UIFont) -> UIButton {
-//    titleLabel?.font = font
-//    return self
-//  }
-//
-//  @discardableResult
-//  func setBorder(color: UIColor, width: CGFloat) -> UIButton {
-//    layer.borderColor = color.cgColor
-//    layer.borderWidth = width
-//    return self
-//  }
-//
-//  @discardableResult
-//  func addGradient(colors: [UIColor]) -> UIButton {
-//    addGradient(colors: colors, direction: .horizontal)
-//    return self
-//  }
-//
-//  @discardableResult
-//  func addShadow() -> UIButton {
-//    layer.shadowColor = UIColor.shadow.cgColor
-//    layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
-//    layer.shadowOpacity = 1
-//    layer.shadowRadius = 24
-//    return self
-//  }
-//}
+
+extension UIView {
+  @discardableResult
+  func addShadow() -> UIView {
+    layer.shadowColor = UIColor.gray.cgColor
+    layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
+    layer.shadowOpacity = 1
+    layer.shadowRadius = 24
+    return self
+  }
+}
