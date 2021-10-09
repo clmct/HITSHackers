@@ -1,6 +1,6 @@
 name: InvestmentGame
 options:
-  xcodeVersion: 12.5
+  xcodeVersion: 12.4
 configs:
   Production: release
   Develop: debug
