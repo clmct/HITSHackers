@@ -24,20 +24,20 @@
                                 <rect key="frame" x="0.0" y="662.33333333333337" width="414" height="73.666666666666629"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OKW-qs-Lbr">
-                                <rect key="frame" x="30" y="130.33333333333337" width="354" height="432"/>
+                                <rect key="frame" x="30" y="130.33333333333337" width="354" height="427"/>
                                 <string key="text">Маша благодарна вам за помощь! Мы уверены, что она учтет ваши советы при формировании своего портфеля. А что насчет вашего? Готовы ли вы собрать собственный инвестиционный портфель? Есть способ проверить! Мы предлагаем вам специально подобранную под вас коллекцию ненастоящих ценных бумаг. Ваша цель - получить сбалансированный портфель к концу игры. Не беспокойтесь, на протяжении всего пути мы будем давать вам ценные советы и фидбэк на принятые решения. Ну что, готовы начать?</string>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <color key="textColor" name="Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Button" translatesAutoresizingMaskIntoConstraints="NO" id="Hxo-pk-aUC">
-                                <rect key="frame" x="60" y="582.33333333333337" width="294" height="50"/>
+                                <rect key="frame" x="60" y="577.33333333333337" width="294" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Jag-Qo-n1P"/>
+                                    <constraint firstAttribute="height" constant="55" id="Jag-Qo-n1P"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KnT-wk-gxV">
-                                <rect key="frame" x="60" y="582.33333333333337" width="294" height="50"/>
+                                <rect key="frame" x="60" y="577.33333333333337" width="294" height="55"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                 <state key="normal" title="Я справлюсь!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
