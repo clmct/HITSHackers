@@ -18,33 +18,67 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg2" translatesAutoresizingMaskIntoConstraints="NO" id="vXK-qk-d8Z">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="147.33333333333334"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="110.33333333333333"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_2_" translatesAutoresizingMaskIntoConstraints="NO" id="PBI-83-bSK">
-                                <rect key="frame" x="0.0" y="588.66666666666663" width="414" height="147.33333333333337"/>
+                                <rect key="frame" x="0.0" y="662.33333333333337" width="414" height="73.666666666666629"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OKW-qs-Lbr">
-                                <rect key="frame" x="20" y="244" width="374" height="232"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Маша благодарна вам за помощь! Мы уверены, что она учтет ваши советы при формировании своего портфеля. А что насчет вашего? Готовы ли вы собрать собственный?</string>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OKW-qs-Lbr">
+                                <rect key="frame" x="30" y="130.33333333333337" width="354" height="432"/>
+                                <string key="text">Маша благодарна вам за помощь! Мы уверены, что она учтет ваши советы при формировании своего портфеля. А что насчет вашего? Готовы ли вы собрать собственный инвестиционный портфель? Есть способ проверить! Мы предлагаем вам специально подобранную под вас коллекцию ненастоящих ценных бумаг. Ваша цель - получить сбалансированный портфель к концу игры. Не беспокойтесь, на протяжении всего пути мы будем давать вам ценные советы и фидбэк на принятые решения. Ну что, готовы начать?</string>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <color key="textColor" name="Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Button" translatesAutoresizingMaskIntoConstraints="NO" id="Hxo-pk-aUC">
+                                <rect key="frame" x="60" y="582.33333333333337" width="294" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Jag-Qo-n1P"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KnT-wk-gxV">
+                                <rect key="frame" x="60" y="582.33333333333337" width="294" height="50"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <state key="normal" title="Я справлюсь!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Победа!" translatesAutoresizingMaskIntoConstraints="NO" id="9sB-dQ-PdB">
+                                <rect key="frame" x="277.66666666666669" y="8" width="124.33333333333331" height="76"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oun-5X-B0J"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="OKW-qs-Lbr" firstAttribute="bottom" secondItem="Hxo-pk-aUC" secondAttribute="top" constant="-20" id="06N-r6-HQT"/>
+                            <constraint firstItem="KnT-wk-gxV" firstAttribute="top" secondItem="Hxo-pk-aUC" secondAttribute="top" id="0Mt-4f-xBR"/>
+                            <constraint firstItem="KnT-wk-gxV" firstAttribute="bottom" secondItem="Hxo-pk-aUC" secondAttribute="bottom" id="2O6-F1-ANY"/>
                             <constraint firstItem="vXK-qk-d8Z" firstAttribute="leading" secondItem="oun-5X-B0J" secondAttribute="leading" id="3mb-Bf-xo0"/>
+                            <constraint firstItem="KnT-wk-gxV" firstAttribute="centerY" secondItem="Hxo-pk-aUC" secondAttribute="centerY" id="BTM-xM-FIN"/>
+                            <constraint firstItem="OKW-qs-Lbr" firstAttribute="leading" secondItem="oun-5X-B0J" secondAttribute="leading" constant="30" id="Dn1-jB-uTJ"/>
                             <constraint firstItem="PBI-83-bSK" firstAttribute="leading" secondItem="oun-5X-B0J" secondAttribute="leading" id="GiP-ge-Krf"/>
-                            <constraint firstItem="vXK-qk-d8Z" firstAttribute="height" secondItem="oun-5X-B0J" secondAttribute="height" multiplier="0.2" id="UvS-r7-p3L"/>
+                            <constraint firstItem="KnT-wk-gxV" firstAttribute="trailing" secondItem="Hxo-pk-aUC" secondAttribute="trailing" id="KLs-Db-xfv"/>
+                            <constraint firstItem="9sB-dQ-PdB" firstAttribute="top" secondItem="oun-5X-B0J" secondAttribute="top" constant="8" id="MeJ-jA-eMw"/>
+                            <constraint firstItem="KnT-wk-gxV" firstAttribute="leading" secondItem="oun-5X-B0J" secondAttribute="leading" constant="60" id="Q9h-y2-0Ay"/>
+                            <constraint firstItem="oun-5X-B0J" firstAttribute="trailing" secondItem="OKW-qs-Lbr" secondAttribute="trailing" constant="30" id="QDa-af-IQX"/>
+                            <constraint firstItem="KnT-wk-gxV" firstAttribute="trailing" secondItem="oun-5X-B0J" secondAttribute="trailing" constant="-60" id="TAB-5i-Tsp"/>
+                            <constraint firstItem="vXK-qk-d8Z" firstAttribute="height" secondItem="oun-5X-B0J" secondAttribute="height" multiplier="0.15" id="UvS-r7-p3L"/>
                             <constraint firstItem="vXK-qk-d8Z" firstAttribute="trailing" secondItem="oun-5X-B0J" secondAttribute="trailing" id="XgO-eu-YEP"/>
                             <constraint firstItem="vXK-qk-d8Z" firstAttribute="top" secondItem="wiG-gv-PKf" secondAttribute="top" id="Zo0-3d-vZI"/>
+                            <constraint firstItem="OKW-qs-Lbr" firstAttribute="top" secondItem="vXK-qk-d8Z" secondAttribute="bottom" constant="20" id="acq-da-qTM"/>
+                            <constraint firstItem="oun-5X-B0J" firstAttribute="trailing" secondItem="9sB-dQ-PdB" secondAttribute="trailing" constant="12" id="gSw-Jy-0Is"/>
                             <constraint firstAttribute="bottom" secondItem="PBI-83-bSK" secondAttribute="bottom" id="kRU-cV-3yh"/>
+                            <constraint firstItem="Hxo-pk-aUC" firstAttribute="bottom" secondItem="PBI-83-bSK" secondAttribute="top" constant="-30" id="nMY-Sg-uqU"/>
+                            <constraint firstItem="KnT-wk-gxV" firstAttribute="leading" secondItem="Hxo-pk-aUC" secondAttribute="leading" id="nUx-Xn-PZg"/>
+                            <constraint firstItem="9sB-dQ-PdB" firstAttribute="width" secondItem="oun-5X-B0J" secondAttribute="width" multiplier="0.3" id="qOX-nw-Haj"/>
                             <constraint firstItem="oun-5X-B0J" firstAttribute="trailing" secondItem="PBI-83-bSK" secondAttribute="trailing" id="tUn-JI-u7C"/>
-                            <constraint firstItem="PBI-83-bSK" firstAttribute="height" secondItem="oun-5X-B0J" secondAttribute="height" multiplier="0.2" id="vFh-hL-7ap"/>
+                            <constraint firstItem="PBI-83-bSK" firstAttribute="height" secondItem="oun-5X-B0J" secondAttribute="height" multiplier="0.1" id="vFh-hL-7ap"/>
+                            <constraint firstItem="KnT-wk-gxV" firstAttribute="centerX" secondItem="Hxo-pk-aUC" secondAttribute="centerX" id="zFX-dh-qK8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textLabel" destination="OKW-qs-Lbr" id="6ul-N0-w9T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hy-e7-Wh2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -52,8 +86,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Button" width="945" height="180"/>
         <image name="bg2" width="780" height="294"/>
         <image name="bg_2_" width="1110" height="300"/>
+        <image name="Победа!" width="254" height="76"/>
         <namedColor name="Color">
             <color red="0.043137254901960784" green="0.11372549019607843" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
