@@ -6,5 +6,8 @@ target 'InvestmentGame' do
   use_frameworks!
 
   # Pods for InvestmentGame
+  pod 'Alamofire'
+  pod 'Kingfisher'
+  pod 'SnapKit'
 
 end
