@@ -98,7 +98,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6H-D8-LFm">
                                 <rect key="frame" x="30" y="426" width="354" height="200"/>
                                 <string key="text">Добро пожаловать в нашу игру! В ней Вам предстоит познакомиться с инвестициями и дорогой в светлое будущее с пассивным доходом. Готовы начать?</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
