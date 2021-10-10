@@ -51,7 +51,9 @@ func createTabBarController() -> UITabBarController {
   
   let viewController1 = StocksViewController()
   let viewController2 = NewsViewController()
-  let viewController3 = NewsViewController()
+  
+  let storyboard3 = UIStoryboard(name: "screenLearn", bundle: nil)
+  let viewController3 = storyboard3.instantiateViewController(withIdentifier: "viewControllerLearn") as? ViewControllerLearn ?? UIViewController()
   
   tabBar.tabBar.unselectedItemTintColor = UIColor(named: "unselected")
   
