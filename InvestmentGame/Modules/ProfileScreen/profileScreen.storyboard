@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller Profile-->
+        <scene sceneID="xT1-RH-lpK">
+            <objects>
+                <viewController storyboardIdentifier="viewControllerProfile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aVW-DQ-ziD" customClass="ViewControllerProfile" customModule="InvestmentGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GUS-Y2-X6D">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Swap-Details" translatesAutoresizingMaskIntoConstraints="NO" id="I0P-MS-GqU">
+                                <rect key="frame" x="157" y="20" width="100" height="10"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eGN-Vl-gOU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="I0P-MS-GqU" firstAttribute="centerX" secondItem="eGN-Vl-gOU" secondAttribute="centerX" id="GUe-hF-48n"/>
+                            <constraint firstItem="I0P-MS-GqU" firstAttribute="top" secondItem="eGN-Vl-gOU" secondAttribute="top" constant="20" id="SQc-uG-fhA"/>
+                            <constraint firstItem="I0P-MS-GqU" firstAttribute="width" secondItem="GUS-Y2-X6D" secondAttribute="width" multiplier="0.241546" id="rVe-Gw-OjU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dVQ-9z-REv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="143" y="58"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Swap-Details" width="100" height="10"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

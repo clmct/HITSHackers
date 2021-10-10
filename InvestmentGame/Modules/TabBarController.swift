@@ -7,6 +7,43 @@ class CustomTabBatController: UITabBarController {
       tabBar.frame.size.height = 75
       tabBar.frame.origin.y = view.frame.height - 75
   }
+  @objc func buttonClicked() {
+    let storyboard = UIStoryboard(name: "profileScreen", bundle: nil)
+    let viewController = storyboard.instantiateViewController(withIdentifier: "viewControllerProfile") as? ViewControllerProfile
+    present(viewController ?? UIViewController(), animated: true, completion: nil)
+    //show(viewController ?? UIViewController(), sender: self)
+  }
+  let button = UIButton()
+  
+
+  
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    tabBar.addSubview(button)
+    tabBar.layoutIfNeeded()
+    button.snp.makeConstraints { make in
+      make.centerY.equalToSuperview().offset(-15)
+      make.centerX.equalToSuperview()
+    }
+    button.setImage(UIImage(named: "main"), for: .normal)
+    button.setImage(UIImage(named: "mainSelected"), for: .highlighted)
+    button.sizeToFit()
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.adjustsImageWhenHighlighted = false
+    button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
+
+
+
+  }
+  
+
+  
+
+  
+
+  
 }
 
 func createTabBarController() -> UITabBarController {
@@ -30,21 +67,8 @@ func createTabBarController() -> UITabBarController {
   
   tabBar.viewControllers = [viewController1, viewController2, viewController3]
   
-  let button = UIButton()
-  
-  button.setImage(UIImage(named: "main"), for: .normal)
-  button.setImage(UIImage(named: "mainSelected"), for: .highlighted)
-  button.sizeToFit()
-  button.translatesAutoresizingMaskIntoConstraints = false
-  button.adjustsImageWhenHighlighted = false
 
 
-  tabBar.tabBar.addSubview(button)
-  tabBar.tabBar.layoutIfNeeded()
-  button.snp.makeConstraints { make in
-    make.centerY.equalToSuperview().offset(-15)
-    make.centerX.equalToSuperview()
-  }
 //  tabBar.tabBar.centerXAnchor.constraint(equalTo: button.centerXAnchor).isActive = true
 //  tabBar.tabBar.topAnchor.constraint(equalTo: button.centerYAnchor).isActive = true
   
