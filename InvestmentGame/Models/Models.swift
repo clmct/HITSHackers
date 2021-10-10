@@ -109,6 +109,7 @@ struct InstrumentRateChange: Codable {
     }
 }
 
+
 // MARK: - Instrument
 struct Instrument: Codable {
     let id: Int
@@ -135,6 +136,7 @@ struct Instrument: Codable {
         case gameWeekID = "GameWeekID"
     }
 }
+
 
 // MARK: - UserInstrument
 struct UserInstrument: Codable {

@@ -3,7 +3,7 @@ import FittedSheets
 
 class StocksViewController: UIViewController {
   let tableView = UITableView()
-  var instruments: [Instrument]? = []
+  var instruments: [UserInstrument]? = []
   var selectedInstrument = 0
   
   override func viewDidLoad() {
@@ -17,7 +17,7 @@ class StocksViewController: UIViewController {
     NetworkService.shared.getUser(id: userId) { result in
       switch result {
       case .success(let result):
-        let instruments = result.gameWeek?.instruments
+        let instruments = result.userInstruments
         self.instruments = instruments
         self.tableView.reloadData()
       case .failure:
@@ -44,12 +44,12 @@ extension StocksViewController: UITableViewDelegate, UITableViewDataSource {
       return UITableViewCell()
     }
     
-    if let instrument = instruments?[indexPath.row] {
-    cell.configure(stock: Stock(title: instrument.name,
+    if let instrument = instruments?[indexPath.row].instrument {
+      cell.configure(stock: Stock(title: instrument.name,
                                 icon: instrument.imageURL,
                                 price: instrument.basePrice,
                                 count: instrument.baseAmount,
-                                change: -4))
+                                change: instruments?[indexPath.row].priceChanged ?? 0))
   }
     return cell
   }
