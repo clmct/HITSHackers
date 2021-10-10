@@ -19,15 +19,26 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Swap-Details" translatesAutoresizingMaskIntoConstraints="NO" id="I0P-MS-GqU">
                                 <rect key="frame" x="157" y="20" width="100" height="10"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sp6-I0-SVs">
+                                <rect key="frame" x="0.0" y="50" width="414" height="686"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eGN-Vl-gOU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="I0P-MS-GqU" firstAttribute="centerX" secondItem="eGN-Vl-gOU" secondAttribute="centerX" id="GUe-hF-48n"/>
+                            <constraint firstItem="Sp6-I0-SVs" firstAttribute="top" secondItem="I0P-MS-GqU" secondAttribute="bottom" constant="20" id="J75-5o-ClV"/>
                             <constraint firstItem="I0P-MS-GqU" firstAttribute="top" secondItem="eGN-Vl-gOU" secondAttribute="top" constant="20" id="SQc-uG-fhA"/>
+                            <constraint firstItem="eGN-Vl-gOU" firstAttribute="trailing" secondItem="Sp6-I0-SVs" secondAttribute="trailing" id="heS-rw-IKP"/>
+                            <constraint firstItem="eGN-Vl-gOU" firstAttribute="bottom" secondItem="Sp6-I0-SVs" secondAttribute="bottom" id="i7Q-Gz-QSc"/>
+                            <constraint firstItem="Sp6-I0-SVs" firstAttribute="leading" secondItem="eGN-Vl-gOU" secondAttribute="leading" id="n9G-HS-JuZ"/>
                             <constraint firstItem="I0P-MS-GqU" firstAttribute="width" secondItem="GUS-Y2-X6D" secondAttribute="width" multiplier="0.241546" id="rVe-Gw-OjU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Sp6-I0-SVs" id="tej-aO-ZBa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dVQ-9z-REv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
