@@ -26,6 +26,12 @@ final class NetworkService {
           completion(.success(jsonObject))
         }
       } catch {
+        if let httpResponse = response as? HTTPURLResponse {
+            print("error code \(httpResponse.statusCode)")
+        }
+        DispatchQueue.main.async {
+          completion(.failure(.error))
+        }
       }
     }.resume()
   }
@@ -122,37 +128,35 @@ extension NetworkService {
     }
   }
   
-  // MARK: TO DO
-  //  func buy(id: Int, completion: @escaping (Result<User, NetworkError>) -> Void) {
-  //    guard let url = URL(string: baseApi + "user/\(id)/next_week") else {
-  //      completion(.failure(.error))
-  //      return
-  //    }
-  //
-  //    var urlRequest = URLRequest(url: url)
-  //    urlRequest.httpMethod = "POST"
-  //
-  //
-  //    self.fetch(urlRequest: urlRequest) { (result: Result<User, NetworkError>) in
-  //      completion(result)
-  //    }
-  //  }
+  func buy(user: Int, instrument: Int, completion: @escaping (Result<Status, NetworkError>) -> Void) {
+      guard let url = URL(string: baseApi + "user/\(user)/buy_instrument/\(instrument)") else {
+        completion(.failure(.error))
+        return
+      }
   
-  // MARK: TO DO
-  //  func sell(id: Int, completion: @escaping (Result<User, NetworkError>) -> Void) {
-  //    guard let url = URL(string: baseApi + "user/\(id)/next_week") else {
-  //      completion(.failure(.error))
-  //      return
-  //    }
-  //
-  //    var urlRequest = URLRequest(url: url)
-  //    urlRequest.httpMethod = "POST"
-  //
-  //
-  //    self.fetch(urlRequest: urlRequest) { (result: Result<User, NetworkError>) in
-  //      completion(result)
-  //    }
-  //  }
+      var urlRequest = URLRequest(url: url)
+      urlRequest.httpMethod = "POST"
+  
+  
+      self.fetch(urlRequest: urlRequest) { (result: Result<Status, NetworkError>) in
+        completion(result)
+      }
+    }
+  
+    func sell(user: Int, instrument: Int, completion: @escaping (Result<Status, NetworkError>) -> Void) {
+      guard let url = URL(string: baseApi + "user/\(user)/sell_instrument/\(instrument)") else {
+        completion(.failure(.error))
+        return
+      }
+  
+      var urlRequest = URLRequest(url: url)
+      urlRequest.httpMethod = "POST"
+  
+  
+      self.fetch(urlRequest: urlRequest) { (result: Result<Status, NetworkError>) in
+        completion(result)
+      }
+    }
   
   // MARK: TO DO
   //  func createInvetProfile(id: Int, completion: @escaping (Result<User, NetworkError>) -> Void) {

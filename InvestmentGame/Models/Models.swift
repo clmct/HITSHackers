@@ -4,22 +4,58 @@ import Foundation
 struct User: Codable {
     let id: Int
     let name: String
-    let balance, baseBalance, gameWeekID: Int
+    let balance, baseBalance, sells, gameWeekID, investProfileID, analyticsID: Int
     let gameWeek: GameWeek?
-    let investProfileID: Int
     let investProfile: InvestProfile?
-    let analyticsID: Int
+    let analytics: Analytics?
+    let userInstruments: [UserInstrument]?
 
     enum CodingKeys: String, CodingKey {
         case id = "ID"
         case name = "Name"
         case balance = "Balance"
         case baseBalance = "BaseBalance"
+        case sells = "Sells"
         case gameWeekID = "GameWeekID"
         case gameWeek = "GameWeek"
         case investProfileID = "InvestProfileID"
         case investProfile = "InvestProfile"
         case analyticsID = "AnalyticsID"
+        case analytics = "Analytics"
+        case userInstruments = "UserInstruments"
+    }
+}
+
+// MARK: - Analytics
+struct Analytics: Codable {
+    let id, totalIncome, totalIncomeRate, investProfileID: Int
+    let investProfile: InvestProfile
+    let instrumentsBalanceVerdict, financialCushionVerdict, testAnswersVerdict, tradingStrategyVerdict: String
+    let totalVerdict: String
+
+    enum CodingKeys: String, CodingKey {
+        case id = "ID"
+        case totalIncome = "TotalIncome"
+        case totalIncomeRate = "TotalIncomeRate"
+        case investProfileID = "InvestProfileID"
+        case investProfile = "InvestProfile"
+        case instrumentsBalanceVerdict = "InstrumentsBalanceVerdict"
+        case financialCushionVerdict = "FinancialCushionVerdict"
+        case testAnswersVerdict = "TestAnswersVerdict"
+        case tradingStrategyVerdict = "TradingStrategyVerdict"
+        case totalVerdict = "TotalVerdict"
+    }
+}
+
+// MARK: - InvestProfile
+struct InvestProfile: Codable {
+    let id: Int
+    let name, investProfileDescription: String
+
+    enum CodingKeys: String, CodingKey {
+        case id = "ID"
+        case name = "Name"
+        case investProfileDescription = "Description"
     }
 }
 
@@ -100,15 +136,22 @@ struct Instrument: Codable {
     }
 }
 
-// MARK: - InvestProfile
-struct InvestProfile: Codable {
-    let id: Int
-    let name, investProfileDescription: String
+// MARK: - UserInstrument
+struct UserInstrument: Codable {
+    let id, currentPrice, priceChanged: Int
+    let priceChangedRate: Double
+    let instrumentID: Int
+    let instrument: Instrument
+    let userID: Int
 
     enum CodingKeys: String, CodingKey {
         case id = "ID"
-        case name = "Name"
-        case investProfileDescription = "Description"
+        case currentPrice = "CurrentPrice"
+        case priceChanged = "PriceChanged"
+        case priceChangedRate = "PriceChangedRate"
+        case instrumentID = "InstrumentID"
+        case instrument = "Instrument"
+        case userID = "UserID"
     }
 }
 
@@ -351,5 +394,19 @@ class JSONAny: Codable {
             var container = encoder.singleValueContainer()
             try JSONAny.encode(to: &container, value: self.value)
         }
+    }
+}
+
+
+// MARK: - Status
+struct Status: Codable {
+    let message: String?
+    let status: Bool?
+    let error: String?
+
+    enum CodingKeys: String, CodingKey {
+        case message = "Message"
+        case status = "Status"
+       case error = "error"
     }
 }

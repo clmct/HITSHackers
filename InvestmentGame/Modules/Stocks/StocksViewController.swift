@@ -1,8 +1,10 @@
 import UIKit
+import FittedSheets
 
 class StocksViewController: UIViewController {
   let tableView = UITableView()
   var instruments: [Instrument]? = []
+  var selectedInstrument = 0
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -12,7 +14,7 @@ class StocksViewController: UIViewController {
     tableView.dataSource = self
     tableView.register(StockTableViewCell.self, forCellReuseIdentifier: "StockTableViewCell")
     
-    NetworkService.shared.getUser(id: 4) { result in
+    NetworkService.shared.getUser(id: userId) { result in
       switch result {
       case .success(let result):
         let instruments = result.gameWeek?.instruments
@@ -58,14 +60,29 @@ extension StocksViewController: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let urlStr = "itms-apps://apps.apple.com/ru/app/id1364026756"
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(URL(string: urlStr)!, options: [:], completionHandler: nil)
-            
-        } else {
-            UIApplication.shared.openURL(URL(string: urlStr)!)
-        }
-
+    selectedInstrument = indexPath.row
+    showAction()
+  }
+  
+  func buy() {
+    NetworkService.shared.buy(user: userId, instrument: selectedInstrument) { result in print(result) }
+  }
+  
+  func sell() {
+    NetworkService.shared.sell(user: userId, instrument: selectedInstrument) { result in print(result) }
+  }
+  
+  func showAction() {
+    let alert = UIAlertController(title: "Выберите действие", message: "", preferredStyle: .actionSheet)
+    alert.addAction(UIAlertAction(title: "Купить", style: .default, handler: { _ in
+      self.buy()
+    }))
+    alert.addAction(UIAlertAction(title: "Продать", style: .default, handler: { _ in
+      self.sell()
+    }))
+    alert.addAction(UIAlertAction(title: "Отмена", style: . cancel, handler: { _ in
+    }))
+    self.present(alert, animated: true, completion: nil)
   }
   
 }

@@ -18,17 +18,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     window?.rootViewController = UINavigationController(rootViewController: viewController ?? UIViewController())
     window?.makeKeyAndVisible()
     
-//    guard let _ = UserDefaults.standard.string(forKey: "user") else {
-//      return
-//    }
-//    NetworkService.shared.createUser(name: UUID().uuidString) { result in
-//      switch result {
-//      case .success(let user):
-//        UserDefaults.standard.set(user.id, forKey: "user")
-//      case .failure(_):
-//        print("error")
-//      }
-//    }
+    print(UserDefaults.standard.integer(forKey: "id"))
+    if UserDefaults.standard.integer(forKey: "id") == 0 {
+      
+      NetworkService.shared.createUser(name: "User", investID: 3) { result in
+        switch result {
+        case .success(let user):
+          print(user.id)
+          UserDefaults.standard.set(user.id, forKey: "id")
+        case .failure(_):
+          print("error")
+        }
+      }
+    }
+    
   }
 }
 
+let userId = UserDefaults.standard.integer(forKey: "id")
