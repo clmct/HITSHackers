@@ -15,13 +15,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     let storyboard = UIStoryboard(name: "screen1", bundle: nil)
     let viewController = storyboard.instantiateViewController(withIdentifier: "viewController1") as? ViewController1
-    window?.rootViewController = UINavigationController(rootViewController: BottomSheetView())
+    window?.rootViewController = UINavigationController(rootViewController: viewController!)
     window?.makeKeyAndVisible()
     
     print(UserDefaults.standard.integer(forKey: "id"))
     if UserDefaults.standard.integer(forKey: "id") == 0 {
       
-      NetworkService.shared.createUser(name: "User", investID: 3) { result in
+      NetworkService.shared.createUser(name: "User", investID: 4) { result in
         switch result {
         case .success(let user):
           print(user.id)
@@ -35,4 +35,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   }
 }
 
-let userId = UserDefaults.standard.integer(forKey: "id")
+let userId = 4

@@ -1,5 +1,5 @@
 import UIKit
-let day = 4
+let day = 8
 class BottomSheetView: UIViewController {
   let titleLabel = UILabel()
   let textLabel = UILabel()
@@ -33,13 +33,25 @@ class BottomSheetView: UIViewController {
       make.top.equalTo(titleLabel.snp.bottom).offset(10)
       make.leading.equalToSuperview().inset(20)
       make.trailing.equalTo(view.snp.centerX).inset(10)
+      make.height.equalTo(40)
     }
     
     button2.snp.makeConstraints { make in
       make.top.equalTo(textLabel.snp.bottom).offset(10)
       make.trailing.equalToSuperview().inset(20)
       make.leading.equalTo(view.snp.centerX).offset(10)
+      make.height.equalTo(40)
     }
+    
+    button1.setTitle("Да", for: .normal)
+    button2.setTitle("Нет", for: .normal)
+    
+    titleLabel.text = "Проблема Насти"
+    textLabel.text = "Ваша подруга Анастасия давно хочет начать инвестировать, но она располагает довольно малым капиталом и готова вложить в ценные бумаги не более 15 тысяч. \r\n\r\nКак вы думаете, может ли Настя начать инвестировать?"
+    
+    configure()
+    
+
   }
   
   func configure() {
@@ -47,8 +59,8 @@ class BottomSheetView: UIViewController {
       switch result {
       case .success(let week):
         let testQuestions = week.testQuestions
-        self.titleLabel.text = testQuestions.first?.name ?? ""
-        self.textLabel.text = testQuestions.first?.text ?? ""
+        self.titleLabel.text = testQuestions.first?.name ?? "1"
+        self.textLabel.text = testQuestions.first?.text ?? "2"
       case .failure(_):
         print("error")
       }

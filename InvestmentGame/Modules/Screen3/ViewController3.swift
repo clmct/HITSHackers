@@ -13,18 +13,22 @@ class ViewController3: UIViewController {
   var data: Int!
   
     @IBAction func go(_ sender: Any) {
-      NetworkService.shared.createUser(name: UUID().uuidString, investID: data) { result in
-            switch result {
-            case .success(let user):
-              UserDefaults.standard.set(user.id, forKey: "user")
-              print(result)
-              self.navigationController?.pushViewController(createTabBarController(), animated: true)
-            case .failure(_):
-              print("error")
-            }
-
-          }
-
+//      NetworkService.shared.createUser(name: UUID().uuidString, investID: data) { result in
+//            switch result {
+//            case .success(let user):
+//              UserDefaults.standard.set(user.id, forKey: "user")
+//              print(result)
+//
+//            case .failure(_):
+//              print("error")
+//            }
+//
+//          }
+      self.navigationController?.pushViewController(createTabBarController(), animated: true)
+      
+      DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+        self.navigationController?.present(BottomSheetView(), animated: true, completion: nil)
+      }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
