@@ -14,7 +14,7 @@ class NewsViewController: UIViewController {
     tableView.rowHeight = UITableView.automaticDimension
     tableView.estimatedRowHeight = 200
     
-    NetworkService.shared.getUser(id: 4) { result in
+    NetworkService.shared.getUser(id: userId) { result in
       switch result {
       case .success(let result):
         let news = result.gameWeek?.news
@@ -60,4 +60,6 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         }
 
   }
+  
+
 }
