@@ -50,6 +50,10 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     return cell
   }
   
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return "Новости"
+  }
+  
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let urlStr = "itms-apps://apps.apple.com/ru/app/id1364026756"
         if #available(iOS 10.0, *) {

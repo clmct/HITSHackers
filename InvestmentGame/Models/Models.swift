@@ -66,7 +66,7 @@ struct GameWeek: Codable {
     let news: [Advice]
     let instruments: [Instrument]
     let advices: [Advice]
-    let testQuestions: [JSONAny]
+    let testQuestions: [TestQuestion]
 
     enum CodingKeys: String, CodingKey {
         case id = "ID"
@@ -75,6 +75,22 @@ struct GameWeek: Codable {
         case instruments = "Instruments"
         case advices = "Advices"
         case testQuestions = "TestQuestions"
+    }
+}
+
+// MARK: - TestQuestion
+struct TestQuestion: Codable {
+    let id: Int
+    let name, text: String
+    let testAnswers: JSONNull?
+    let gameWeekID: Int
+
+    enum CodingKeys: String, CodingKey {
+        case id = "ID"
+        case name = "Name"
+        case text = "Text"
+        case testAnswers = "TestAnswers"
+        case gameWeekID = "GameWeekID"
     }
 }
 

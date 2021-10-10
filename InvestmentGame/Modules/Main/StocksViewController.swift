@@ -2,12 +2,25 @@ import UIKit
 import FittedSheets
 
 class StocksViewController: UIViewController {
+  let child = NewsViewController()
   let tableView = UITableView()
   var instruments: [UserInstrument]? = []
   var selectedInstrument = 0
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    //
+    view.addSubview(child.view)
+    addChild(child)
+    child.didMove(toParent: self)
+    child.view.snp.makeConstraints { make in
+      make.top.leading.trailing.equalToSuperview()
+      make.bottom.equalTo(view.snp.centerY)
+    }
+    
+    
+    //
     view.backgroundColor = .white
     setup()
     tableView.delegate = self
@@ -29,7 +42,8 @@ class StocksViewController: UIViewController {
   func setup() {
     view.addSubview(tableView)
     tableView.snp.makeConstraints { make in
-      make.edges.equalToSuperview()
+      make.leading.trailing.bottom.equalToSuperview()
+      make.top.equalTo(child.view.snp.bottom)
     }
   }
 }
@@ -52,6 +66,10 @@ extension StocksViewController: UITableViewDelegate, UITableViewDataSource {
                                 change: instruments?[indexPath.row].priceChanged ?? 0))
   }
     return cell
+  }
+  
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return "Мои инструменты"
   }
   
   

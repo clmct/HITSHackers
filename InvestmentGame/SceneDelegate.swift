@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     let storyboard = UIStoryboard(name: "screen1", bundle: nil)
     let viewController = storyboard.instantiateViewController(withIdentifier: "viewController1") as? ViewController1
-    window?.rootViewController = UINavigationController(rootViewController: viewController ?? UIViewController())
+    window?.rootViewController = UINavigationController(rootViewController: BottomSheetView())
     window?.makeKeyAndVisible()
     
     print(UserDefaults.standard.integer(forKey: "id"))
