@@ -75,7 +75,7 @@ class ViewControllerProfile: UIViewController, UITableViewDelegate, UITableViewD
   let dummies: [ProfileData123] = {
     var dummies: [ProfileData123] = []
     for i in 0...3 {
-      dummies.append(ProfileData123(text: "Акции не являются хорошимвыбором при предпочтениистабильных инструментов.Вам стоило посоветовать другу облигации. ", icon: false))
+      dummies.append(ProfileData123(text: "Акции не являются хорошим выбором при предпочтении стабильных инструментов. Вам стоило посоветовать другу облигации. ", icon: false))
     }
     
     for i in 0...3 {
