@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller Dashboard-->
+        <scene sceneID="SfG-UY-fif">
+            <objects>
+                <viewController storyboardIdentifier="dashboardVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DNU-Fu-0WQ" customClass="ViewControllerDashboard" customModule="InvestmentGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v93-mN-qQG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dashboard" translatesAutoresizingMaskIntoConstraints="NO" id="tzY-8Z-vXe">
+                                <rect key="frame" x="60" y="30" width="294" height="676"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oLb-sI-HxB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oLb-sI-HxB" firstAttribute="trailing" secondItem="tzY-8Z-vXe" secondAttribute="trailing" constant="60" id="37H-WP-DfI"/>
+                            <constraint firstItem="tzY-8Z-vXe" firstAttribute="top" secondItem="oLb-sI-HxB" secondAttribute="top" constant="30" id="FwM-vl-cak"/>
+                            <constraint firstItem="tzY-8Z-vXe" firstAttribute="leading" secondItem="oLb-sI-HxB" secondAttribute="leading" constant="60" id="UQR-pA-cBa"/>
+                            <constraint firstItem="oLb-sI-HxB" firstAttribute="bottom" secondItem="tzY-8Z-vXe" secondAttribute="bottom" constant="30" id="qex-wE-4b5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iwb-cC-Q8h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="126" y="42"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dashboard" width="684" height="1650"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
